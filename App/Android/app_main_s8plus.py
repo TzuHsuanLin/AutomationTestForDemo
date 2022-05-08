@@ -232,7 +232,7 @@ class SuperTaste(unittest.TestCase):
         desired_caps = {
             'platformName': 'Android',
             'platformVersion': '8.0',
-            'deviceName': 'ce031713bc2694670d',  # S8+(8.0) : ce031713bc2694670d, HTC(9.0) NE9CF1S01374
+            'deviceName': '31111f0a7a8c',  # S8+(8.0) : ce031713bc2694670d, HTC(9.0) NE9CF1S01374 HTC(U20)31111f0a7a8c
             'appPackage': 'com.tvbs.supertastemvppack',
             'appActivity': 'com.tvbs.supertaste.ui.activity.SplashActivity',
             'autoGrantPermissions': True

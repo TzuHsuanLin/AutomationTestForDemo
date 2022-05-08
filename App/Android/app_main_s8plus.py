@@ -14,14 +14,20 @@ import app_register_login_s8plus
 # Freyja
 # 關閉【新手教學頁】
 def init(self):
-    # 新手教學
+    # 等待頁面加載完成
+    WebDriverWait(self.driver, 10).until(
+        lambda x: x.find_element_by_id('com.tvbs.supertastemvppack:id/beginner_layout'))
     for i in range(3):
-        self.driver.find_element_by_class_name('android.widget.ImageView').click()
-        self.driver.implicitly_wait(3)
+        # 抓ID位置去點
+        self.driver.find_element_by_id('com.tvbs.supertastemvppack:id/beginner_layout').click()
+        self.driver.implicitly_wait(10)
 
     # 立即逛逛btn
     self.driver.find_element_by_id('com.tvbs.supertastemvppack:id/beginner_close_btn').click()
+
     self.driver.implicitly_wait(3)
+    WebDriverWait(self.driver, 20).until(lambda x: x.find_element_by_xpath("//*[@text='首頁']"))
+    print("已關閉新手教學頁,進到首頁")
 
 # Freyja
 # 【會員登入頁】完成Apple ID登入，並檢查有登入成功
